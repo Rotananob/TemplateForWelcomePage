@@ -1,0 +1,242 @@
+<!DOCTYPE html>  
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome - ស្វាគមន៍</title>
+  <link rel="icon" type="image/png" href="assets/css/fonts/images/logo.png">
+
+  <style>
+    * { transition: background-color 0.5s ease, color 0.5s ease; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Khmer', sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #0f172a, #1e293b);
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .topbar h2 {
+      font-size: 22px;
+      background: linear-gradient(90deg, #06b6d4, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #darkModeBtn {
+      padding: 10px 22px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: white;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.6);
+    }
+    #darkModeBtn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #9333ea, #06b6d4);
+    }
+
+    /* kleng Welcome Section */
+    .welcome-section { padding: 60px 20px; }
+    .welcome-box {
+      background: rgba(255,255,255,0.9);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 40px auto 0;
+    }
+    .welcome-box h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #facc15, #38bdf8, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .welcome-box h4 { font-size: 15px; margin-bottom: 20px; color: #4b5563; }
+    .avatar-section { margin-bottom: 20px; }
+
+    .btn-group .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .btn {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: white;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #9333ea, #06b6d4);
+    }
+    .btn.danger { background: #dc2626; color: white; }
+
+    footer { margin-top: 20px; font-size: 13px; color: #6b7280; }
+
+    /* កន្លែង Features Section */
+    .features { max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center; }
+    .features h2 {
+      font-size: 26px; margin-bottom: 25px;
+      background: linear-gradient(90deg, #3b82f6, #06b6d4, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .features .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .features .card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s, background 0.3s;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .features .card:hover {
+      transform: translateY(-8px);
+      background: linear-gradient(135deg, #06b6d4, #9333ea);
+      color: white;
+    }
+
+    /* ធ្វើ dark Mode */
+    body.dark { background: #0f172a; color: #f8fafc; }
+    body.dark .topbar { background: linear-gradient(90deg, #1e293b, #334155); }
+    body.dark .welcome-box { background: rgba(30,41,59,0.9); color: #f1f5f9; }
+    body.dark .welcome-box h4 { color: #cbd5e1; }
+    body.dark footer { color: #94a3b8; }
+    body.dark .features .card { background: #1e293b; color: #e2e8f0; }
+    body.dark .features .card:hover { background: linear-gradient(135deg, #9333ea, #06b6d4); color: white; }
+  </style>
+</head>
+<body>
+  <!-- kbal header--> 
+  <header class="topbar">
+    <div class="topbar-left">
+      <h2>📚 RotanaNOB <br>Private E-learning 📖</h2>
+    </div>
+    <div class="topbar-right">
+      <button id="darkModeBtn">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <!-- MainContent -->
+  <section class="welcome-section">
+    <div class="welcome-box">
+      <h1>👋 សូមស្វាគមន៍ <span id="userDisplay"></span> 🎉</h1>
+      <h4><b>ដាក់រូបអ្នកនៅកន្លែង Choose file 📁</b></h4>
+
+      <div class="avatar-section">
+        <img id="avatarPreview" src="assets/img/default-avatar.png"
+             alt="User Avatar" width="120" height="120"
+             style="border-radius: 50%; object-fit: cover;">
+        <input type="file" id="avatarUpload" accept="image/*">
+      </div>
+
+      <div class="btn-group">
+        <a href="dashboard.html" class="btn">📚 ចាប់ផ្តើមចូលរៀន</a>
+        <a href="profile-sitting.html" class="btn">⚙️ ធ្វើប្រវត្តិរូបឲហើយដែរឬទេ?</a>
+        <button id="logoutBtn" class="btn danger">🚪 ចាកចេញ</button>
+      </div>
+
+      <footer><br>
+                <p>13/02/2024</p>
+                
+
+        <p>© Rotana NOB</p>
+      </footer>
+    </div>
+
+    <section class="features">
+      <h2>✨ អ្វីដែលអ្នកនឹងទទួលបានពេលរៀន 👍</h2>
+      <div class="grid">
+        <div class="card">👨‍🏫 អ្នកបង្រៀនមានបទពិសោធន៍</div>
+        <div class="card">🎥 វីដេអូរាប់ពាន់សម្រាប់រៀន</div>
+        <div class="card">💻 ចេះបង្កើត Website និង App</div>
+        <div class="card">📝 មេរៀនខ្មែរ + អង់គ្លេស</div>
+        <div class="card">🗺️ រៀនបានគ្រប់ទីកន្លែង</div>
+        <div class="card">🏫⚙️ ដោះស្រាយបញ្ហាក្នុងសាលា</div>
+        <div class="card">💹 បង្កើនចំណេះដឹង</div>
+        <div class="card">🧰 ចាប់ផ្ដើម Freelancer</div>
+        <div class="card">📚 មេរៀនចែងជាកញ្ជប់ៗ</div>
+      </div>
+    </section>
+  </section>
+
+  <!-- pjoub muy firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyByOAeLSs6GItG-m0qzBQ19HgFhWSv-J6U",
+      authDomain: "x-flow-studio.firebaseapp.com",
+      projectId: "x-flow-studio",
+      storageBucket: "x-flow-studio.firebasestorage.app",
+      messagingSenderId: "608679807495",
+      appId: "1:608679807495:web:403bea2d684dc324d338a2",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const userDisplay = document.getElementById("userDisplay");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // check mer user pel jol 
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        userDisplay.textContent = user.displayName || user.email;
+      } else {
+        //ត្រលប់auto tv kleng login vinh ber ot ton login 
+        window.location.href = "login.html";
+      }
+    });
+
+    // kleng Logout
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+      alert('🚪អ្នកបានចាកចេញហើយ សុំ Login សារថ្មីមុនប្រើប្រាស់!🔳')
+      window.location.href = "login.html";
+    });
+
+    // Dark Mode
+    const darkModeBtn = document.getElementById("darkModeBtn");
+    darkModeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      darkModeBtn.textContent =
+        document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+
+    // AvatarUploadPreview(local only)
+    const avatarUpload = document.getElementById("avatarUpload");
+    const avatarPreview = document.getElementById("avatarPreview");
+    avatarUpload.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (ev) => { avatarPreview.src = ev.target.result; };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
