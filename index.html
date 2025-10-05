@@ -205,7 +205,7 @@
         userDisplay.textContent = user.displayName || user.email;
       } else {
         //ត្រលប់auto tv kleng login vinh ber ot ton login 
-        window.location.href = "login.html";
+       // window.location.href = "login.html";កន្លែងនេះញុមបិទបើមិនចឹងទេវា Redrict ទៅ Login វិញហើយ​ ចាំមានfile login ចាំបើកវិញបាន
       }
     });
 
@@ -213,7 +213,7 @@
     logoutBtn.addEventListener("click", async () => {
       await signOut(auth);
       alert('🚪អ្នកបានចាកចេញហើយ សុំ Login សារថ្មីមុនប្រើប្រាស់!🔳')
-      window.location.href = "login.html";
+     window.location.href = "login.html"; 
     });
 
     // Dark Mode
@@ -241,4 +241,5 @@
 
 </body>
 </html>
+
 
