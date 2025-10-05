@@ -185,12 +185,12 @@
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyByOAeLSs6GItG-m0qzBQ19HgFhWSv-J6U",
-      authDomain: "x-flow-studio.firebaseapp.com",
-      projectId: "x-flow-studio",
-      storageBucket: "x-flow-studio.firebasestorage.app",
-      messagingSenderId: "608679807495",
-      appId: "1:608679807495:web:403bea2d684dc324d338a2",
+      apiKey: "Your APIkey",
+      authDomain: "yourDomain",
+      projectId: "YourProject",
+      storageBucket: ".....",
+      messagingSenderId: "1111111111111",
+      appId: "yourAppID",
     };
 
     const app = initializeApp(firebaseConfig);
@@ -222,6 +222,7 @@
       document.body.classList.toggle("dark");
       darkModeBtn.textContent =
         document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+      
     });
 
     // AvatarUploadPreview(local only)
@@ -240,3 +241,4 @@
 
 </body>
 </html>
+
